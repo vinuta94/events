@@ -1,6 +1,6 @@
 <html>
 <title>Event details</title>
-<body bgcolor="white">
+<body bgcolor="108b9e">
 
 <?php
 	session_start();
