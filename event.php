@@ -3,24 +3,21 @@
     <div align="center" >
 			
         <form action="" method="POST">
-			<table>
-			<tr>
-     <td> Event Name   <input type="text" name="name" > </td><br> 
-       <td> Organizer   <input type="text" name="oragnizer" > </td><br>
-        Description  <td> <input type="text" name="description" > </td><br>
-      Venue   <td> <input type="text" name="venue" > </td><br>
-        
-        Start Date  <td> <input type="date" name="startdate"> </td><br>
-        End Date  <td> <input type="date" name="enddate"> </td><br>
-         Banner  <td> <input type="file" name="image"> </td><br>
-        Available Seats  <td> <input type="text" name="seats" > </td><br> 
-		Url  <td> <input type="text" name="url"> </td><br>
-        Contact Number1  <td> <input type="text" name="num1" > </td><br>
-			Contact Number2  <td> <input type="text" name="num2" > </td><br>
-        
-         <td> <input type="submit" name="Add Event" placeholder="submit"/> </td>
-            </form>
-		</table>
+			
+		<h2> Event Name</h2>   <input type="text" name="name" > <br> 
+        	<h2> Organizer  </h2> <input type="text" name="oragnizer" > <br>
+		<h2> Description </h2>  <input type="text" name="description" ><br>
+		<h2> Venue </h2>   <input type="text" name="venue" > <br>
+		<h2>  Start Date <h2> <input type="date" name="startdate"> <br>
+       		<h2> End Date </h2> <input type="date" name="enddate"> <br>
+		<h2> Banner </h2>  <input type="file" name="image"> <br>
+		<h2>	Available Seats </h2><input type="text" name="seats" > <br> 
+		<h2> Url </h2> <input type="text" name="url"> br>
+		<h2> Contact Number1 </h2> <input type="text" name="num1" ><br>
+		<h2> Contact Number2 </h2>  <input type="text" name="num2" > <br>
+        	<input type="submit" name="Add Event" placeholder="submit"> 
+         </form>
+		
     </div>
        
 <?php
@@ -36,25 +33,6 @@ $image = $_POST['image'];
 $seats = $_POST['seats_ava'];
 $contact1 = $_POST['contact1'];
 $contact2 = $_POST['contact2'];
-
-
-
-// Create connection
-$conn = new mysqli($servername, $user, $pass, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-$sql = "INSERT INTO event_details (eid, ename, eorganizer, description, venue, startdate, enddate, ticketprice, image, seats_ava, contact1, contact2)
-VALUES ('$name', '$organizer', '$description','$venue','$start','$end','$tprice','$image','$seats','$contact1','$contact2')";
-
-
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
 
 ?> 
 	<?php echo $name ?><br>
